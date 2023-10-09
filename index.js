@@ -5,18 +5,10 @@ var key = params.get('key');
 
 $(function () {
     // 送信
-
-
-
-$('#qr-button').click(function() {
-	// LIFF の QR コード読み取り機能呼び出し
-	liff.scanCode().then(function(result) {
-
- 　　　　　const qr_data = result.value;
-		
-	});
-
-
+    $('form').submit(function () {
+  
+        var s_code = $('input[name="serialcode"]').val();
+        
 
 
         // var date = $('input[name="date"]').val();
@@ -34,7 +26,7 @@ $('#qr-button').click(function() {
      
 
 
-       msg = ["QR data：" + qr_data] ;　 //トークに送信する内容
+       msg = ["code：" + s_code] ;　 //トークに送信する内容
 
         
         
@@ -51,10 +43,7 @@ $('#qr-button').click(function() {
 
 
  
-
-
-
-
+ 
 
 
 
