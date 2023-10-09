@@ -6,9 +6,24 @@ var key = params.get('key');
 $(function () {
     // 送信
 
-    
-    
-    $('form').submit(function () {
+
+
+$('#qr-button').click(function() {
+
+
+document.getElementById('qr_button').addEventListener('click', function() {
+    if (liff.isInClient()) {
+
+        liff.scanCode().then(result => {
+            document.getElementById('s_code').textContent = result.value;
+		
+        }).catch(err => {
+            document.getElementById('s_code').textContent = err.message;
+        });	    
+    }
+});
+
+
   
         var s_code = $('input[name="serialcode"]').val();
         
