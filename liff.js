@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function () {
 
     var liffId = "2001059289-X2m74PYZ";
@@ -24,8 +10,6 @@ function initializeLiff(liffId) {
             liffId: liffId
         })
         .then(() => {
-
-            
           // start to use LIFF's api
           initializeApp();
         })
@@ -55,13 +39,10 @@ function sendText(text) {
 
 
 
-
 $('#qr-button').click(function() {
 	// LIFF の QR コード読み取り機能呼び出し
 	liff.scanCode().then(function(result) {
 		$.post(result.value, { userId: "111111" }, function(data) {
-
-
 
 			
 		}).catch(function(err) {
