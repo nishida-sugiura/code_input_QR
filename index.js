@@ -7,8 +7,11 @@ $(function () {
     // 送信
     $('form').submit(function () {
   
-        var s_code = $('input[name="serialcode"]').val();
+        var s_cod = $('input[name="serialcode"]').val();
         
+        var s_code = $('input[id="qr-button"]').val();
+        
+
         
 
 
