@@ -9,6 +9,8 @@ $(function () {
   
         var s_code = $('input[name="serialcode"]').val();
         
+        
+
 
 
         // var date = $('input[name="date"]').val();
@@ -26,7 +28,7 @@ $(function () {
      
 
 
-       msg = ["code：" + s_code] ;　 //トークに送信する内容
+       msg = ["code：" + qr] ;　 //トークに送信する内容
 
         
         
