@@ -39,10 +39,20 @@ function sendText(text) {
 
 
 $('#qr-button').click(function() {
-	// LIFF の QR コード読み取り機能呼び出し
-	liff.scanCode().then(function(result) {
-let qr = result.value
-	});
+
+document.getElementById('qr_button').addEventListener('click', function() {
+    if (liff.isInClient()) {
+        liff.scanCode().then(result => {
+            document.getElementById('qr').textContent = result.value;
+        }).catch(err => {
+            document.getElementById('qr').textContent = err.message;
+        });
+    }
+});
+
+
+
+	
 });
 
 
