@@ -3,8 +3,7 @@ var key = params.get('key');
 
 //let daytime2 = document.getElementById("textArea").value.trim();
 
-$(function () {
-    // 送信
+
 
 
 
@@ -53,11 +52,6 @@ document.getElementById('qr_button').addEventListener('click', function() {
         return false;
         
     });
-}
- 
- 
-)
-
 
 
  
