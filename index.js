@@ -5,6 +5,9 @@ var key = params.get('key');
 
 $(function () {
     // 送信
+
+    
+    
     $('form').submit(function () {
   
         var s_code = $('input[name="serialcode"]').val();
