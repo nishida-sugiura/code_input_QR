@@ -41,12 +41,7 @@ function sendText(text) {
 $('#qr-button').click(function() {
 	// LIFF の QR コード読み取り機能呼び出し
 	liff.scanCode().then(function(result) {
-		$.post(result.value, { userId: userId }, function(data) {
-			alert(data.addPoint + ' ポイントを獲得しました！');
-			$('#point').text(data.currentPoint + data.addPoint + ' ポイント');
-		}).catch(function(err) {
-			console.log(err);
-		});
+
 	});
 });
 
