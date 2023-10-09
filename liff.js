@@ -41,25 +41,6 @@ function sendText(text) {
 
 
 
-$('#qr-button').click(function() {
-
-
-document.getElementById('qr_button').addEventListener('click', function() {
-    if (liff.isInClient()) {
-
-        liff.scanCode().then(result => {
-            document.getElementById('s_code').textContent = result.value;
-		
-        }).catch(err => {
-            document.getElementById('s_code').textContent = err.message;
-        });	    
-    }
-});
-
-	
-});
-
-
 
 
 
