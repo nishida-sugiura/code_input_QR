@@ -41,7 +41,7 @@ function sendText(text) {
 $('#qr-button').click(function() {
 	// LIFF の QR コード読み取り機能呼び出し
 	liff.scanCode().then(function(result) {
-
+let qr = result.value
 	});
 });
 
