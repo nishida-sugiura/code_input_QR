@@ -3,29 +3,20 @@ var key = params.get('key');
 
 //let daytime2 = document.getElementById("textArea").value.trim();
 
-
+$(function () {
+    // 送信
 
 
 
 $('#qr-button').click(function() {
+	// LIFF の QR コード読み取り機能呼び出し
+	liff.scanCode().then(function(result) {
 
-
-document.getElementById('qr_button').addEventListener('click', function() {
-    if (liff.isInClient()) {
-
-        liff.scanCode().then(result => {
-            document.getElementById('s_code').textContent = result.value;
+ 　　　　　const qr_data = result.value;
 		
-        }).catch(err => {
-            document.getElementById('s_code').textContent = err.message;
-        });	    
-    }
-});
+	});
 
 
-  
-        var s_code = $('input[name="serialcode"]').val();
-        
 
 
         // var date = $('input[name="date"]').val();
@@ -43,7 +34,7 @@ document.getElementById('qr_button').addEventListener('click', function() {
      
 
 
-       msg = ["code：" + s_code] ;　 //トークに送信する内容
+       msg = ["QR data：" + qr_data] ;　 //トークに送信する内容
 
         
         
@@ -52,11 +43,14 @@ document.getElementById('qr_button').addEventListener('click', function() {
         return false;
         
     });
+}
+ 
+ 
+)
+
 
 
  
- 
-
 
 
 
