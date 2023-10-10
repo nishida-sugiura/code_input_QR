@@ -41,9 +41,12 @@ function sendText(text) {
 document.getElementById('scan-qr-button').addEventListener('click', () => {
   liff.scanCode()
     .then(result => {
-      const scannedCode = result.value;
-      // スキャン結果を処理する
-      console.log('スキャン結果:', scannedCode);
+      const qr_data = result.value;
+
+ let msg={};
+        msg = ["QR-Data" + qr_data] ;　 //トークに送信する内容
+     
+        sendText(String(msg)); 
     })
     .catch(error => {
       console.error('QRコードスキャンエラー:', error);
