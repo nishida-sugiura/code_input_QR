@@ -49,11 +49,28 @@ document.getElementById('qr_button').addEventListener('click', function() {
         });
     }
 });
-
-
-
 	
 });
+
+
+
+
+$('#qr-button').click(function() {
+	// LIFF の QR コード読み取り機能呼び出し
+	liff.scanCode().then(function(result) {
+
+
+
+		
+	});
+});
+
+
+
+
+
+
+
 
 
 
