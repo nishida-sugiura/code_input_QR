@@ -41,17 +41,34 @@ function sendText(text) {
 document.getElementById('scan-qr-button').addEventListener('click', () => {
   liff.scanCode()
     .then(result => {
-      const qr_data = result.value;
+      const scannedCode = result.value;
 
- let msg={};
-        msg = ["QR-Data" + qr_data] ;　 //トークに送信する内容
-     
-        sendText(String(msg)); 
+      // LINE Messaging APIにメッセージを送信する
+      liff.sendMessages([
+        {
+          type: 'text',
+          text: scannedCode // スキャン結果をメッセージに設定
+        }
+      ])
+      .then(() => {
+        console.log('メッセージが送信されました');
+      })
+      .catch((error) => {
+        console.error('メッセージの送信エラー:', error);
+      });
     })
     .catch(error => {
       console.error('QRコードスキャンエラー:', error);
     });
 });
+
+
+
+
+
+
+
+
 
 
 
