@@ -46,7 +46,7 @@ document.getElementById('scan-qr-button').addEventListener('click', () => {
 
     liff.sendMessages([{
         'type': 'text',
-        'text': text
+        'text': scannedCode
     }]).then(function () {  
         liff.closeWindow();
         
