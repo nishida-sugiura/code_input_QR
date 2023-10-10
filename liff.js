@@ -43,19 +43,18 @@ document.getElementById('scan-qr-button').addEventListener('click', () => {
     .then(result => {
       const scannedCode = result.value;
 
-      // LINE Messaging APIにメッセージを送信する
-      liff.sendMessages([
-        {
-          type: 'text',
-          text: scannedCode // スキャン結果をメッセージに設定
-        }
-      ])
-      .then(() => {
-        console.log('メッセージが送信されました');
-      })
-      .catch((error) => {
-        console.error('メッセージの送信エラー:', error);
-      });
+
+    liff.sendMessages([{
+        'type': 'text',
+        'text': text
+    }]).then(function () {  
+        liff.closeWindow();
+        
+    }).catch(function (error) {
+        window.alert('Failed to send message ' + error);
+    });
+
+    
     })
     .catch(error => {
       console.error('QRコードスキャンエラー:', error);
