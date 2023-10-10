@@ -9,10 +9,6 @@ $(function () {
   
         var s_cod = $('input[name="serialcode"]').val();
         
-        var s_code = $('input[id="qr-button"]').val();
-        
-
-        
 
 
 
