@@ -38,32 +38,18 @@ function sendText(text) {
 
 
 
-$('#qr-button').click(function() {
-
-document.getElementById('qr_button').addEventListener('click', function() {
-    if (liff.isInClient()) {
-        liff.scanCode().then(result => {
-            document.getElementById('qr').textContent = result.value;
-        }).catch(err => {
-            document.getElementById('qr').textContent = err.message;
-        });
-    }
-});
-	
+document.getElementById('scan-qr-button').addEventListener('click', () => {
+  liff.scanCode()
+    .then(result => {
+      const scannedCode = result.value;
+      // スキャン結果を処理する
+      console.log('スキャン結果:', scannedCode);
+    })
+    .catch(error => {
+      console.error('QRコードスキャンエラー:', error);
+    });
 });
 
-
-
-
-$('#qr-button').click(function() {
-	// LIFF の QR コード読み取り機能呼び出し
-	liff.scanCode().then(function(result) {
-
-
-
-		
-	});
-});
 
 
 
