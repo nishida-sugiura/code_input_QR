@@ -23,7 +23,7 @@
 
 <section>
 
-<h2>コード入力画面aa</h2>
+<h2>コード入力画面</h2>
 <!--<h1 class="tp"><img src="top_deposit.jpg"></h1><h1 class="tp"><img src="top_htu.jpg"></h1>--->
 
 
@@ -33,13 +33,45 @@
 <form>
 
 	
+<h1><br></h1>	
+	
+<h1 class="m">　５桁の数字を入力してから　<br>確定ボタンを押してください</h1>
+
+<h1 class="m1">※コードは代金をお支払い後に入力してください。</h1>
+<h1 class="m1">※結果はLineのトーク画面に出力されます。</h1>
+	
+  <h1 class="ss"><input type="number" name="serialcode" min="10000" max="999999" oninput="javascript: this.value = this.value.slice(0, 5);" style="width:7em;" style=”ime-mode:disabled;" class="code" placeholder=" コードを入力" required></h1>
 
 
-<button id="scan-qr-button">QRコード読み取り</button>
+
+<h5><div><input type="submit" value="確定する" class="button" ></div></h5>
+
+
 
 	
 </form>
-        
+
+
+
+
+	
+
+
+
+<p class="resizeimage">
+	 <img id="customButton" src="1697184923437.png" alt="QRコードをスキャン" style="display: block; margin-left: auto; margin-right: 0;">
+ </p>
+
+
+
+	
+    <script src="liff.js"></script>
+    <script src="app.js"></script>
+
+
+
+
+	
 
 <br>
 <br>
@@ -55,7 +87,7 @@
 
 <script>
 
- <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
